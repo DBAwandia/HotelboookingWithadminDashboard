@@ -1,0 +1,147 @@
+.stripeComplete{
+    width: 100%;
+    padding: 15px;
+}
+.stripesContainer{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.stripeShipping{
+    flex: 3.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-right: 0.5px solid rgba(214, 214, 214,0.3);
+}
+.shoppingCart{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+.shoppingCart>h1{
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: orangered;
+    align-self: flex-start;
+}
+.shoppingCart>h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: teal;
+    letter-spacing: 1px;
+    margin-left: 10px
+}
+.paragraLayer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.paragraLayer>p{
+    font-size: 19px;
+    font-weight: 450;
+    letter-spacing: 1.5px;
+    color: red;
+    margin-left: 10px
+}
+.shopSpan{
+    margin-left: 15px;
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.paymentOPtion{
+    margin: 20px 5px;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+}
+.orderStats{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.orderstartss{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.cardelement{
+    font-size: 29px;
+}
+.orderStats>p{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    font-weight: 570;
+}
+.paymentPage{
+    flex: 6.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.paymentContainer{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.paymentContainer>p{
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.1px
+}
+.paymentContainer>h2{
+    font-size: 22px;
+    letter-spacing: 1.3px;
+    color: green;
+}
+.paymentInput{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+.paymentInput>input{
+    width: 30px;
+    height: 30px;
+    border: 1px solid orange;
+    margin-top: 20px;
+    outline: 0;
+}
+.paymentInput>p{
+    font-size: 20px;
+    font-weight: 430;
+    margin-top: 18px;
+    letter-spacing: 0.9px
+}
+
+.stripeButton{
+   
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    height: 53px;
+    width: 370px;
+    margin-left: -24px;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 700;
+    align-items: center;
+    background: rgba(226, 98, 88,0.4);
+    box-shadow: 0px 10px 9px 1px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 0px 10px 9px 1px rgba(0,0,0,0.47);
+    -moz-box-shadow: 0px 10px 9px 1px rgba(0,0,0,0.47);
+}
+.paymentPageContainer{
+    position: absolute;
+    top: -230px;
+    right:180px;
+    gap: 40px;
+}

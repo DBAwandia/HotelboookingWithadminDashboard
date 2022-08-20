@@ -1,0 +1,118 @@
+.new{
+    width: 100%;
+}
+.newContainer{
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 10px;
+    flex: 1;
+}
+.newSidebarss{
+    flex: 0.3;
+    margin-top: -710px;
+    margin-left: 10px;
+}
+.newSidebarContain{
+    flex: 0.7;
+
+}
+.newSidebarContains{
+    flex: 0.7;
+    width: 100%;
+
+}
+.newTOP{
+    box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+    flex: 1;
+    padding: 30px;
+}
+.outlineContain{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.outlineContains{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.newBottom{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    padding: 25px;
+    box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+}
+.imageOptions{
+    position: absolute;
+    top: 110px;
+    right: 130px;
+}
+.imageOptions > img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+textarea{
+    padding: 20px;
+}
+.inputOptionss{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+}
+.optOptions{
+    display: flex;
+    flex-direction : column;
+}
+.optOptions>input{
+    border: 0;
+    font-size: 19px;
+    outline: 0;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    flex: 1;
+}
+.optOptions>p{
+    font-size: 20px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.ooptButtons{
+    height: 56px;
+    font-size: 21px;
+    text-transform: uppercase;
+    background: lightblue;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    margin-top: 20px;
+    letter-spacing: 1.7px;
+    text-align: center;
+    align-items: center;
+}
+option{
+    padding: 5px;
+    gap: 10px;
+    font-size: 15px;
+}
+.selectRooms{
+    width: 100%;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+}
+.optionss{
+    padding: 15px;
+    background: rgba(0,0,0,0.23);
+    font-size: 13px;
+}

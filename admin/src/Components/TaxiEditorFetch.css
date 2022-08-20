@@ -1,0 +1,91 @@
+.taxiEditorfetchx{
+    width: 100%;
+}
+.taxiEditorfetchsx{
+    width: 100%;
+}
+.taxiEditorfetchssx{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 5px;
+}
+.taxiEditorfetchsssx{
+    width: 100%;
+    padding: 20px;
+    flex: 3.5;
+}
+a{
+text-decoration: none;
+}
+.taxiEditorfetchssssx{
+    width: 100%;
+    flex: 6.5;
+    padding: 20px;
+}
+.imageEditorzx{
+    width: 100%;
+    padding: 20px;
+}
+.imageEditotz2x{
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(233, 230, 230,0.45);
+   
+}
+.imageEditotz2x>h1{
+    color: teal;
+    margin-left: 250px;
+    font-weight: 400;
+}
+.imageEditotz3x{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    position: relative;
+}
+.imageEditotz4x{
+    margin-right: 50px;
+   
+}
+.imageEditotz66{
+    margin-left: 150px;
+    color: green;
+    font-size: 20px;
+}
+.imageEditotz5x{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.imageEditotz6x>input{
+    outline: none;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-left: 140px;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+}
+.imageEditotz6x>button{
+    background-color: rgba(1, 94, 94,0.68);
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    letter-spacing: 2px;
+    height: 56px;
+    font-size: 22px;
+    justify-content: center;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    margin-left: 160px;
+}
+.imageEditotz44{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-top: -95px;
+    margin-right: 50px;
+
+}

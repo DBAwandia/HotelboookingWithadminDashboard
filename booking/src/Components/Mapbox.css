@@ -1,0 +1,57 @@
+.mapbox{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.mabboxChange{
+    flex: 3;
+    padding: 15px;
+    width: 100%;
+    margin-top:-250px;
+    border-right: 1px solid rgba(206, 206, 206,0.45);
+
+}
+.mapboxView{
+    flex: 7;
+    box-shadow: -3px 4px 9px 5px rgba(0,0,0,0.4);
+    -webkit-box-shadow: -3px 4px 9px 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: -3px 4px 9px 5px rgba(0,0,0,0.4);
+    object-fit: cover;
+}
+.mabboxChange{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 30%;
+}
+.mabboxChange>h1{
+    letter-spacing :2px;
+    font-size: 27px;
+    color: orangered;
+    font-weight: 500;
+}
+.mabboxChange>p{
+    letter-spacing :2px;
+    font-size: 21px;
+    align-items: center;
+    color: teal;
+    font-weight: 400; 
+}
+.mabboxChange{
+    letter-spacing :2px;
+    font-size: 19px;
+    font-weight: 370; 
+}
+.geolocator{
+    color:red;
+}
+.mabboxChange{
+    font-weight: 570; 
+    font-size: 19px;
+}
+a{
+    text-decoration: 0;
+    color: red;
+}

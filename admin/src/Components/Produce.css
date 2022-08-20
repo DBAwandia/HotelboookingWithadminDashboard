@@ -1,0 +1,53 @@
+.products{
+    width: 100%;
+}
+.productContainer{
+    display: flex;
+    align-items: center;
+}
+.producttContainer{
+    flex: 3;
+    padding: 20px;
+    margin-top: 140px;
+}
+.productContainer{
+    flex: 7;
+    padding: 25px;
+}
+        
+.dataGrid{
+    width: 100%;
+    height: 80vh;
+}
+.cellAction{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    cursor: pointer;
+}
+.viewButton{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: darkblue;
+    border: 1px dotted lightblue;
+}
+.deleteButton{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: crimson;
+    border: 1px dotted rgba(220 ,20, 60, 0.55);
+}
+.dataGrid{
+    outline: 0;
+}
+.classwithimg{
+    display: flex;
+    align-items: center;
+}
+.classwithimg>img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}

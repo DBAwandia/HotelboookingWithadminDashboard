@@ -1,0 +1,121 @@
+.rRating{
+    width: 700px;
+    margin-top: 0;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+.rContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    gap: 80px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 725px;
+}
+.bConiner{
+    cursor: pointer;
+}
+.rImages{
+    width: 430px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.rDescription{
+    margin: 20px 0px;
+    font-size: 18px;
+}
+.rDescription > h1{
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.rDescription > p{
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
+.rDesc{
+    display: flex;
+    align-items: center;
+}
+.ratings{
+    color: red;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: auto;
+    font-size: large;
+    letter-spacing: 0.5rem;
+}
+.ratingss{
+    margin-left: 9px;
+}
+.aContainers{
+    width: 2000px;
+    margin-left: 10px;
+    padding: 35px;
+    background: linear-gradient(180deg, rgba(131, 131, 214,0.35) 10%, rgba(101, 204, 238,0.5));
+}
+.display{
+    width: 600px;
+    padding: 15px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    gap: 15px;
+    width: 900px;
+    margin-left: 620px;
+    border: 2px solid lightgray;
+}
+form>h1{
+    margin-left: 300px;
+    font-weight: bolder;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+form>input{
+    margin-left: 150px;
+    width: 600px;
+    height: 60px;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 15px;
+    background: rgba(158, 155, 155,0.26);
+}
+form>textarea{
+    width: 500px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.35);
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    font-size: 18px;
+    margin-top: 15px;
+    align-items: center;
+    outline: 0;
+    margin-left: 200px;
+
+}
+form button{
+    width: 579px;
+    height: 64px;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+    margin-top: 20px;
+    margin-left: 165px;
+    opacity: 0.5;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, rgb(131, 131, 214) 10%, rgb(61, 61, 238));
+}

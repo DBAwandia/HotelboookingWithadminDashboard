@@ -1,0 +1,74 @@
+.single{
+    width: 100%;
+}
+.singleContainer{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.singleSidebar{
+    flex: 0.3;
+    width: 100%;
+    padding: 5px;
+}
+.singleSidebarContain{
+    flex: 0.7;
+    width: 100%;
+    padding: 15px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+}
+.left> h1{
+    font-size:  21px;
+    letter-spacing: 0.9px;
+    font-weight: 600;
+}
+.item{
+    display: flex;
+    align-items: center;
+}
+.item>img{
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.editButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: purple;
+    background: lightblue;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 10px 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.details{
+    display: flex;
+    flex-direction : column;
+    gap: 5px;
+    margin-left: 50px;
+}
+.details>h1{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+}
+.details>p{
+    font-size: 19px;
+    font-weight: 420;
+    letter-spacing: 0.8px;
+}
+.bottom{
+    padding: 25px;
+    margin: 20px 20px;
+}

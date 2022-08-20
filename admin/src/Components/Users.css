@@ -1,0 +1,70 @@
+.users{
+    width: 100%;
+}
+.userContainer{
+    display: flex;
+    align-items: center;
+    margin: 5px 5px;
+    padding: 10px;
+
+}
+.userrContainer{
+    flex: 3;
+    padding: 20px;
+    margin-top: 330px;
+}
+.usersrContainer{
+    flex: 7;
+    padding: 25px;
+    margin: 10px 5px;
+    padding: 10px;
+}
+.classwithimg{
+    display: flex;
+    align-items: center;
+}
+.classwithimg>img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.username{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.inactive{
+    color: red;
+    font-size: 18px;
+}
+.active{
+    color: green;
+    font-size: 18px;
+}
+.pending{
+    color: orange;
+    font-size: 18px;
+}
+.cellAction{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    cursor: pointer;
+}
+.viewButton{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: darkblue;
+    border: 1px dotted lightblue;
+}
+.deleteButton{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: crimson;
+    border: 1px dotted rgba(220 ,20, 60, 0.55);
+}
+.dataGrid{
+    outline: 0;
+}

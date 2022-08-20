@@ -1,0 +1,92 @@
+.bBed{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+.bedContainer{
+    width: 90%;
+    top: 60px;
+    display: flex;
+    z-index: 999;
+    position: absolute;
+    flex-direction: column;
+    
+}
+.bedContainers{
+    padding-top: 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bedContainers > ul{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-right: 50px;
+}
+ul > li>a{
+    font-size: 26px;
+    font-weight: 600;
+    cursor: pointer;
+    color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul > li>a:hover{
+    color: rgb(253, 68, 1);
+    cursor: pointer;
+}
+.hheader>h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: orangered;
+    margin-left: 50px;
+    letter-spacing: 2px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+a{
+    text-decoration: 0;
+    color: white;
+}
+.bedDesc{
+    width: 55%;
+    padding: 20px;
+    margin-left: 30%;
+    margin-top: 30px;
+}
+.bedDesc >p{
+    align-items: center;
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.35);
+    line-height: 35px;
+    letter-spacing: 1.1px;
+}
+.bedVida{
+    width: 100%;
+    background-position: center;
+    height: 100%;
+    padding: 10px;
+}
+.ssLider{
+    z-index: 1;
+    transition: 0.2s ease-in-out;
+}
+.bedVideoss{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+   
+
+}
+.bedVideo{
+    width: 100%;
+    
+    object-fit: cover;
+    height: 100%;
+}

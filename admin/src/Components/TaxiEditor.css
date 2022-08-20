@@ -1,0 +1,66 @@
+.taxiEditor{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+.taxiEditorContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.taxiEditorContainers{
+    flex: 3.5;
+}
+.taxiEditorContainerss{
+    flex: 6.5;
+    padding: 10px;
+}
+.renderImage{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.renderImage>img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+.actionEdit{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+.view{
+    border: 1px dotted lightblue;
+    padding: 12px;
+    color: gray;
+    font-size: 13px;
+}
+a{
+text-decoration: none;
+}
+.edit{
+    border: 1px dotted teal;
+    padding: 12px;
+    color: teal;
+    font-size: 13px;
+}.delete{
+    border: 1px dotted red;
+    padding: 12px;
+    color: red;
+    font-size: 13px;
+}
+.taxiEditorDatagrid{
+    width: 100%;
+    height: 70vh;
+}
+.models{
+    position: relative;
+    width: 100%;
+}
+.openModals{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

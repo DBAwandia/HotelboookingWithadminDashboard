@@ -1,0 +1,37 @@
+.table{
+    margin-top: 50px;
+}
+.ttablecells{
+    color: teal;
+    font-size: 22px;
+    font-weight: 550;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+
+}
+.tImage{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tImage>img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border: 0;
+}
+.status{
+    padding:5px;
+    font-size: 18px;
+}
+.Pending{
+    color: yellow;
+}
+.Approved{
+    color: green;
+
+}
+.Failed{
+    color: red;
+
+}

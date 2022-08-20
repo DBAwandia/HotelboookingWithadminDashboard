@@ -1,0 +1,84 @@
+.room{
+    width: 100%;
+    position: relative;
+    z-index: 99999;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85 );
+}
+.roomContainer{
+    width: 100%;
+    height: 100vh;
+}
+.roomObject{
+  display: flex;
+  flex-direction: column;
+  padding: 29px 20px;
+  width: 42%;
+  gap: 24px;
+  top: 20px;
+  position: sticky;
+  left: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.roomObject > b{
+    font-size: 22px;
+    margin: 20px -12px;
+    color: teal;
+
+}
+.rrContainer{
+    display: flex;
+    gap: 180px;
+    border-bottom: 1px solid rgba(212, 212, 212,0.35);
+}
+.dDisplay{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+.subrContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.checkboxContaiber{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.subBox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.subBox>input{
+    width: 35px;
+    height: 35px;
+}
+.subBox>input:hover{
+    background: blue;
+}
+.rNutton{
+    width: 700px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 21px;
+    margin-left: 20px;
+    background: rgb(115, 13, 211);
+    height: 58px;
+}
+.cancelX{
+    position: absolute;
+    top: 70px;
+    cursor: pointer;
+    font-size: 36px;
+    right: 70px;
+}

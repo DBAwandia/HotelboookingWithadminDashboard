@@ -1,0 +1,68 @@
+.header{
+    width: 100%;
+    padding: 25px;
+}
+.hContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+
+}
+.hIcon{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+.hIcons{
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+    padding: 5px 10px;
+    border: 1px solid rgba(224, 224, 224, 0.35);
+    border-radius: 3px;
+}
+.hIcons:active{
+   background-color: rgb(195, 195, 231);
+   transition: 0.2s ease-in-out;
+}
+.hIcons >p{
+    margin-left:10px;
+    font-weight: 634;
+    font-size: 23px;
+
+
+    
+}
+.hIcons >p:hover{
+    color: rgba(45, 45, 110, 0.85);
+    transition: all 0.2s ease-in-out;
+}
+.hDescription{
+    align-items: center;
+    margin-top: 25px;
+
+
+
+}
+.hParagraph{
+    align-items: center;
+    margin-top: 30px;
+}
+.hDescription > h2{
+    font-size: 21px;
+    margin-top: 30px;
+
+}
+.hParagraph > h2{
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 12px;
+
+}
+.hIcon>a{
+    text-decoration: none;
+    color: black;
+
+}

@@ -1,0 +1,156 @@
+.searchs{
+    position: sticky;
+    top:37px;
+    width: 100%;
+    height: 60px;
+    z-index: 999;
+}
+.inputsContainer{
+    width: 70%;
+    position: absolute;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    top: -27px;
+    margin-right: 300px;
+    right: 0;
+    bottom: 0;
+    border: 3.5px solid rgb(243, 243, 74);
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.inputs > input{
+    flex: 1;
+    height: 50px;
+    margin: 0px 10px;
+    font-size: 20px;
+    background-color: rgba(243, 239, 239, 0.4);
+}
+.inputs > span{
+    margin: 0px 10px;
+    font-size: 20px;
+    flex: 1;
+}
+.inputs > p{
+    margin-left: 28px;
+}
+.inputsContainer > button{
+    width: 110px;
+    height: 49px;
+    font-size: 21px;
+    padding: 15px 0px;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    margin: 0px 20px;
+    background: rgba(109, 109, 231,0.69);
+}
+.inputsContainer > button:active{
+    background: rgba(213, 213, 248, 0.69);
+    transition: all 0.2s ease-in-out;
+}
+.rRooms{
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px;
+    align-items: center;
+    top: 54px;
+    right: 210px;
+    border-radius: 3px;
+    background: rgba(15, 14, 14,0.3);
+    position: absolute;
+    cursor: pointer;
+}
+.backs{
+    width: 30px;
+    height: 30px;
+}
+.rRooms>button{
+   
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 0;
+}
+.rRooms>button:active{
+    background: rgba(143, 143, 243, 0.69);
+    transition: all 0.2s ease-in-out;
+}
+.rRooms>p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0px;
+    padding: auto;
+}
+.back{
+    background-color: rgb(223, 22, 22);
+    font-size: 15px;
+    padding: 8px 5px;
+    width: 105px;
+    margin: 17px 0px;
+    height: 35px;
+}
+
+.dates{
+    width: 1000px;
+    height: 60vh;
+    margin-left: -580px;
+    margin-top: 100px;
+}
+:root .rdrDateDisplayWrapper{
+  background-color: rgb(239, 242, 247);
+
+}
+
+:root .rdrDateDisplayItem{
+    color: red;
+}
+:root .rdrCalendarWrapper{
+    background-color: rgb(94, 177, 177);
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  :root input{
+    color: teal;
+    font-size: 21px;
+  }
+  :root .rdrWeekDays{
+    font-size: 16px;
+    color: red;
+  }
+  :root .rdrMonth{
+    font-size: 16px;
+    color: red;
+  }
+  :root .rdrDays{
+    font-size: 16px;
+    color: red;
+  }
+.dateRanges{
+    position: absolute;
+    top: 50px;
+    margin-left: 330px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+.backss{
+    background-color: rgb(223, 22, 22);
+    font-size: 18px;
+    padding: 8px 5px;
+    width: 105px;
+    margin: 17px 0px;
+    height: 35px;
+    margin-top: 320px;
+    margin-left: 455px;
+}
+

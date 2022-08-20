@@ -1,0 +1,81 @@
+.analytics{
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+}
+.analyticContainer{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+    gap: 10px;
+    width: 100%;
+}
+.analyticChart{
+    display: flex;
+    flex-direction :column;
+    gap: 10px;
+    padding: 25px;
+    width: 256px;
+    height: 240px;
+    box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.35);
+    -moz-box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+}
+.analyticRating{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.analyicDesc{
+    font-size: 18px;
+    font-weight: 400;
+    color: darkgray;
+    line-height: 40px;
+    letter-spacing: 1.1px;
+}
+.analyicContain{
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    gap: 10px;
+   
+}
+.analyticChartss{
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 550;
+    letter-spacing: 1.3px;
+    margin-left: -10px;
+    color: teal;
+}
+.analyticRating>span{
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+}
+.analyticRating>p{
+    font-size: 19px;
+    font-weight: 530;
+    letter-spacing: 1.2px;
+    margin-left: 10px;
+}
+.reactCharts{
+    padding: 25px;
+    flex: 1;
+}
+.analtycsCharts{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progressAnalytics{
+    flex: 3.4;
+}
+.chartsAnalytics{
+    flex: 6.6;
+}
+a{
+    text-decoration: none;
+}

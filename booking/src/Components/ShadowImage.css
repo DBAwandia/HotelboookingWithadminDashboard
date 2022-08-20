@@ -1,0 +1,70 @@
+.imageShadow{
+    width:100%;
+    height: 100vh;
+    margin: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.imageShadows{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    position: absolute;
+
+}
+.shadowSlider{
+    /* background: rgb(95, 93, 93,0.16); */
+    padding: 25px;
+    width: 100%;
+    background: rgba(0,0,0,0.94);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.shadoImage{
+    width: 80%;
+    height: 70%;
+    padding: 10px;
+}
+.contentImage{
+    position: absolute;
+    padding: 10px;
+}
+.shadoImagges{
+    width: 1130px;
+    height: 850px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.hadoowIcon{
+    position: absolute;
+    z-index: 99;
+    top: 50px;
+    right: 70px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 22px;
+    color: orangered;
+}
+.hadoowIcon:active{
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+:root{
+    
+    --swiper-theme-color: orangered;
+    --swiper-pagination-color: var(--swiper-theme-color);
+    --swiper-pagination-bullet-size: 15px;
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
+    --swiper-navigation-size: 50px;
+    --swiper-navigation-padding: 50px;
+    --swiper-pagination-bullet-gap: 12px;
+    --swiper-navigation-color: orangered;
+    --swiper-pagination-bullet-inactive-color: #000;
+}

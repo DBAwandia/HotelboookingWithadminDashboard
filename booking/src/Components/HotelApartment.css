@@ -1,0 +1,89 @@
+.hApartment{
+    width: 900px;
+    height: 75vh;
+   
+}
+
+.himageContainer{
+    width: 80%;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    position: sticky;
+    top: 70px;
+    margin-left: 250px;
+    cursor: pointer;
+    scroll-behavior: smooth;
+}
+.imagess{
+    margin: 30px 85px;
+    
+
+}
+.images{
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.images:hover{
+    transition: all 0.2s ease-in-out;
+    transform: rotate(0.3deg);
+}
+
+
+.hDescriptiion{
+    display: flex;
+    flex-direction: column;
+    top: 370px;
+    width: 100%;
+    margin-left: 88px;
+    color: rgb(129, 111, 20);
+    position: absolute;
+}
+.hDescriptiion > h1{
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.hDescriptiion > p{
+    font-weight: 650;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: blue;
+}
+.imgSlder{
+    width: 100%;
+    height: 100%;
+    margin-left: 8px;
+}
+:root{
+    --swiper-navigation-color: #fff;
+}
+@media screen and (max-width: 650px) {
+    .himageContainer{
+        
+        display: flex;
+        flex-direction: column;
+         position: sticky;
+    top: 370px;
+    scroll-behavior: smooth;
+
+    }
+    .hApartment{
+        display: flex;
+        flex-direction: column;
+    }
+    .imgSlder .images{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .images{
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin: 10px 10px;
+    }
+}

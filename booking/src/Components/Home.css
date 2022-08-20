@@ -1,0 +1,12 @@
+.home{
+    width: 100%;
+}
+.pContainer{
+    margin-top: -600px;
+    scroll-behavior: smooth;
+    transition: 0.2s ease-in-out;
+    padding: 25px;
+    position: sticky;
+}
+.aContainer{
+}

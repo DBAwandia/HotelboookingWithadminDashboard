@@ -1,0 +1,27 @@
+.OrderrContains{
+    justify-content: center;
+    text-align: center;
+}
+.pagination{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.pagination .page_num{
+    padding: 8px 10px;
+    border-radius: 3px;
+
+}
+.pagination .page_num:hover{
+    background: purple;
+    color: white;
+}
+.pagination .active{
+    background: orange;
+}
