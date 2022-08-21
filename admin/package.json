@@ -2,6 +2,7 @@
   "name": "admin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
   "dependencies": {
     "@coreui/coreui": "^4.2.0",
     "@coreui/react": "^4.3.0",
