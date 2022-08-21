@@ -37,7 +37,7 @@ function OrderHistory({setSidebar}) {
     useEffect(()=>{
         const endOffset = offSet + itemPerPage
         setCurrrentItems(data.slice(offSet, endOffset))
-        setPageCount(data.length/itemPerPage)
+        setPageCount(Math.ceil(data.length/itemPerPage))
     },[offSet, data,itemPerPage])
 
     const handlePageClick = (event) =>{
