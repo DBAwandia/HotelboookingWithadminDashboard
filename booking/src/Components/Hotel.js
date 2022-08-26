@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import './Hotel.css'
 import Navbar from './Navbar'
 import PropertyList from './PropertyList'
@@ -11,6 +11,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range'
 import OrderHistory from './OrderHistory'
 import { format } from 'date-fns'
+
 function Hotel() {
     const location = useLocation()
     const[openDate, setOpenDate] = useState(false)
@@ -31,14 +32,14 @@ function Hotel() {
                 
         })
     }
-   
   return (
     <div className='hotel'>
+        
         <Navbar/>
        
                    <div className='sidebarSticky'>
                    {sidebar && <div className='OrderHistoryHotel'>
-                        <OrderHistory setSidebar={setSidebar} />
+                        <OrderHistory  setSidebar={setSidebar} />
                     </div>}
                    </div>
                      <div clasName='manageSearch'>

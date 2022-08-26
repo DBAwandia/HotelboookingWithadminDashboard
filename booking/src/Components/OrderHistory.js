@@ -1,9 +1,10 @@
-import React,{useState,useContext,useEffect} from 'react'
+import React,{useState,useContext,useEffect,useRef} from 'react'
 import './OrderHistory.css'
 import useFetch from '../Hooks/useFetch'
 import { LoginContext } from '../Context/LoginContext';
 // import vi from 'timeago.js/lib/lang/vi';
 import ReactPaginate from 'react-paginate';
+import ReactToPrint from "react-to-print";
 // import TimeAgo from 'timeago-react'
 import Moment from 'react-moment';
 import 'moment-timezone';
@@ -25,10 +26,12 @@ import {Cancel} from '@mui/icons-material'
 //         time: "just now"
 //     }
 // ]
-function OrderHistory({setSidebar}) {
+function OrderHistory({setSidebar,ref}) {
     const { user} = useContext(LoginContext)
     const id = user._id
+    // console.log(id,user)
     const {data} = useFetch(`http://localhost:5000/userr/orderlist/${id}`)
+    // console.log(data)
     const [currentItems, setCurrrentItems] = useState(null)
     const [pageCount, setPageCount] = useState(0)
     const [offSet, setOffset] = useState(0)
@@ -37,21 +40,28 @@ function OrderHistory({setSidebar}) {
     useEffect(()=>{
         const endOffset = offSet + itemPerPage
         setCurrrentItems(data.slice(offSet, endOffset))
-        setPageCount(Math.ceil(data.length/itemPerPage))
+        setPageCount(data.length/itemPerPage)
     },[offSet, data,itemPerPage])
 
     const handlePageClick = (event) =>{
         setOffset(event.selected * itemPerPage)
     }
-    
+    let componentRef = useRef();
+  
   return (
     <div className='OrderHistory'>
+       
               <Cancel onClick={()=>setSidebar(false)} sx={{position: "absolute",top:39,color: 'red', right: 70,cursor:"pointer", fontSize: 45}}/>
-        <div className='OrderHistoryContainer'>
+             
+       <div style={{width: "100%",height:"100%"}}>
+       
+       <div className='OrderHistoryContainer' ref={(el) => (componentRef = el)}>
             <h1>YOUR ORDER HISTORY</h1>
             <div className='OrderrContains'>
                  {currentItems?.map((item)=>{
-            return <div className='orderObjects' key={item._id}>
+            return <div className='orderObjects' 
+            key={item._id}
+            >
                     <div className='orderObjectsContainer'>
                         <div className='objalign'>
                             <p>Orderid:</p><b>{item._id}</b>
@@ -81,22 +91,30 @@ function OrderHistory({setSidebar}) {
                    </div>
         })}
             </div>
-            <ReactPaginate
-        breakLabel="..."
-        nextLabel={">>"}
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        pageCount={pageCount}
-        previousLabel={"<<"}
-        renderOnZeroPageCount={null}
-        breakLinkClassName="break_link"
-        containerClassName="pagination"
-        pageLinkClassName="page_num"
-        activeLinkClassName="active"
-        previousLinkClassName="page_num"
-        nextLinkClassName="page_num"
-      />
+          
+              <ReactPaginate
+            breakLabel="..."
+            nextLabel={">>"}
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            pageCount={pageCount}
+            previousLabel={"<<"}
+            renderOnZeroPageCount={null}
+            breakLinkClassName="break_link"
+            containerClassName="pagination"
+            pageLinkClassName="page_num"
+            activeLinkClassName="active"
+            previousLinkClassName="page_num"
+            nextLinkClassName="page_num"
+          />
+                <ReactToPrint
+                    trigger={() => <p style={{cursor:"pointer", fontSize:"14px",marginTop:"20px",color:"gray",padding: 10}}>print/download</p>}
+                    content={() => componentRef}
+                />
         </div>
+      
+       </div>
+            
     </div>
   )
 }

@@ -20,25 +20,25 @@ db.on("err", ()=>console.log("err"))
 db.once("open", ()=>console.log("connected to mongoose"))
 
 const roomRouter = require("./routes/room")
-app.use("/api/room", roomRouter)
+app.use("/room", roomRouter)
 
 const stripeRouter = require("./routes/stripe")
-app.use("/api/stripe", stripeRouter)
+app.use("/stripe", stripeRouter)
 
 const orderRouter = require("./routes/Orders")
-app.use("/api/Orders" , orderRouter)
+app.use("/Orders" , orderRouter)
 
 const hotelRouter = require("./routes/hotel")
-app.use("/api/hotel", hotelRouter)
+app.use("/hotel", hotelRouter)
 
 const bookOrder = require("./routes/Bookorders")
-app.use("/api/Bookorders", bookOrder)
+app.use("/Bookorders", bookOrder)
 
 const userRouter = require("./routes/userr")
-app.use("/api/userr", userRouter)
+app.use("/userr", userRouter)
 
 const deliveryRouter = require("./routes/deliverys")
-app.use("/api/deliverys", deliveryRouter)
+app.use("/deliverys", deliveryRouter)
 
 app.listen(PORT, ()=>console.log("server running"))
 
