@@ -6,6 +6,15 @@ const bookSchema = new mongoose.Schema({
     },
     amount:{
         type: Number
+    },
+    dayone:{
+        type: String
+    },
+    daytwo:{
+        type: String
+    },
+    name:{
+        type: String
     }
 },
 {timestamps: true})

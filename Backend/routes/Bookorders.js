@@ -2,16 +2,24 @@ const express = require("express")
 const router = express.Router()
 const users = require("../models/User")
 const bookorders = require("../models/BookOrder")
+const authToken = process.env.AUTH_TOKEN;
+const accountSid = process.env.ACCOUNT_SID;
+const client = require("twilio")(accountSid, authToken)
+
 
 router.post("/:userId", async(req,res)=>{
     const userid = req.params.userId
     const days = req.body.days
+    const dayone = req.body.dayone
     const amount = req.body.amount
-    const savedBooking = bookorders({ days: days, amount: amount})
+    const daytwo = req.body.daytwo
+    const name = req.body.name
+
+    const savedBooking = bookorders({ days: days, amount: amount,daytwo: daytwo,dayone: dayone,name: name})
     try{
         const savedBook = await savedBooking.save()
         try{
-            await users.findByIdAndUpdate(userid,{$push :{orders: savedBook._id}}).sort({_id: 1})
+            await users.findByIdAndUpdate(userid,{$push :{orders: savedBook._id}})
         }catch(err){
             res.status(500).json(err)
         }
@@ -109,6 +117,57 @@ router.get("/stats", async(req,res)=>{
             },
         ])
         res.status(201).json(income)
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
+//login phonenumber channel(sms/call)
+router.get("/logincode", (req,res)=>{
+    const {phonenumber, channels} =req.query
+
+    try{
+
+            client.verify.v2.services(process.env.SERVICE_ID).verifications.create(
+                {
+                    to: phonenumber,
+                    channel: channels
+                }
+            ).then((data=>{
+            if(data.status === "pending"){
+                res.status(200).json({message: "verification sent", data})
+            }else{
+                res.status(400).json({message: "wrong number"})
+            }
+            }))
+        
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
+//verify login phonenumber code
+router.post("/logincodeverify", (req,res)=>{
+    // const phonenumber =req.query.phonenumber
+    // const codes =req.query.codes
+    const {phonenumber, codes} =req.query
+
+    try{
+      
+          client.verify.v2.services(process.env.SERVICE_ID).verificationChecks.create(
+                {
+                    to: `+${phonenumber}`,
+                    code: codes
+                }
+            ).then((data)=>{
+                if(data.valid === "true"){
+                    res.status(200).json({message:"success", data} )
+                }
+                else{
+                    res.status(400).json({message:"wrong details", data})
+                }
+                
+            })
+           
+        
     }catch(err){
         res.status(500).json(err)
     }

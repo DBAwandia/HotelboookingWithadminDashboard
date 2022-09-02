@@ -5,6 +5,7 @@ import { LoginContext } from '../Context/LoginContext';
 // import vi from 'timeago.js/lib/lang/vi';
 import ReactPaginate from 'react-paginate';
 import ReactToPrint from "react-to-print";
+import { SearchContext } from '../Context/SearchContext';
 // import TimeAgo from 'timeago-react'
 import Moment from 'react-moment';
 import 'moment-timezone';
@@ -47,7 +48,10 @@ function OrderHistory({setSidebar,ref}) {
         setOffset(event.selected * itemPerPage)
     }
     let componentRef = useRef();
-  
+    const {date} =useContext(SearchContext)
+    const start = date.startdate
+    const end = date.enddate
+    console.log(start,end)
   return (
     <div className='OrderHistory'>
        
@@ -108,7 +112,7 @@ function OrderHistory({setSidebar,ref}) {
             nextLinkClassName="page_num"
           />
                 <ReactToPrint
-                    trigger={() => <p style={{cursor:"pointer", fontSize:"14px",marginTop:"20px",color:"gray",padding: 10}}>print/download</p>}
+                    trigger={() => <p style={{cursor:"pointer", fontSize:"14px",marginTop:"20px",color:"lightgray",padding: 10}}>print/download</p>}
                     content={() => componentRef}
                 />
         </div>

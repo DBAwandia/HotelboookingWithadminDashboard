@@ -155,6 +155,7 @@ router.get("/orderlist/:id", async(req,res)=>{
     try{
         const getall= await Promise.all(ORDER.orders.map(item=>{
             return bookorders.findById(item)
+            
         }))
         res.status(200).json(getall)
     }catch(err){

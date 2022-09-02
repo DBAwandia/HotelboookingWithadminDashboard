@@ -5,6 +5,8 @@
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.1",
     "axios": "^0.27.2",
+    "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.2.11",
     "react-router-dom": "^6.3.0",
     "react-stripe-checkout": "^2.6.3"
   }
