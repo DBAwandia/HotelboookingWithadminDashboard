@@ -6,15 +6,17 @@ import { DataGrid } from '@mui/x-data-grid';
 import {roomColumns} from './DataTables'
 import {useLocation,Link} from 'react-router-dom'
 import Sidebar from './Sidebar'
+import {axiosInstance} from "../Utils/Utils"
+
 function Sales() {
   const location = useLocation()
   const [data, setData] = useState([])
   const [list, setList] = useState([])
   const path = location.pathname.split("/")[1]
-  const obj = `/api/room/${path}`
+  const obj = `/room/${path}`
   const fetchData = async(obj)=>{
     try{
-      const res = await axios.get(obj)
+      const res = await axiosInstance.get(obj)
       setData(res.data)
     }catch(err){}
   }
@@ -26,7 +28,7 @@ function Sales() {
 
   const handleDelete = async(id)=>{
     try{
-      await axios.delete(`/api/room/${path}/${id}`)
+      await axiosInstance.delete(`/room/${path}/${id}`)
       setList(list.filter(item => item._id !== id))
     }catch(err){}
 

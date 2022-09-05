@@ -10,11 +10,21 @@ const bookSchema = new mongoose.Schema({
     dayone:{
         type: String
     },
+    rommname:{
+        type: String
+    },
     daytwo:{
         type: String
     },
     name:{
         type: String
+    },
+    hotelname:{
+        type: String
+    }
+    ,
+    phonnumbers:{
+        type: Number
     }
 },
 {timestamps: true})

@@ -8,10 +8,12 @@ import axios from 'axios'
 import OpenModal from './OpenModal'
 import Sidebar from './Sidebar'
 import{ deliveryColumns} from './DataTables'
+import {axiosInstance} from "../Utils/Utils"
+
 function TaxiEditor(){
     // const [open, setOpen] = useState(false)
     const [list, setList] = useState([])
-    const {data,loading,error} =useFetch("/api/deliverys/finds")
+    const {data,loading,error} =useFetch("/deliverys/finds")
     useEffect(()=>{
         setList(data)
     },[data])
@@ -26,7 +28,7 @@ function TaxiEditor(){
             renderCell:(params)=>{
                 const id=params.row._id
                 const handleDelete= async(id) =>{
-                    await axios.delete(`/api/deliverys/delete/${id}`)
+                    await axiosInstance.delete(`/deliverys/delete/${id}`)
                     setList(
                     list.filter(item => item._id !== id)
 

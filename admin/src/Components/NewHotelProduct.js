@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import axios from 'axios'
 import {useLocation} from 'react-router-dom'
+import {axiosInstance} from "../Utils/Utils"
 
 
 
@@ -40,7 +41,7 @@ function NewHotelProduct(){
 
       const newhotel ={name,type,cheapestPrice,desc,title,city,photos: lists}
 
-      await axios.put(`/api/hotel/hotel/${ids}`, newhotel)
+      await axiosInstance.put(`/hotel/hotel/${ids}`, newhotel)
         setSuccess(true)
         
       }catch(err){

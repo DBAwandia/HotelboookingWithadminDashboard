@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import axios from 'axios'
 import {useLocation} from 'react-router-dom'
+import {axiosInstance} from "../Utils/Utils"
 
 
 
@@ -31,7 +32,7 @@ function NewUserContainer(){
 
       const newuser ={username,email,phonenumber,photos: URL}
 
-      await axios.put(`/api/userr/updates/${ids}`, newuser)
+      await axiosInstance.put(`/userr/updates/${ids}`, newuser)
         setSuccess(true)
         
       }catch(err){

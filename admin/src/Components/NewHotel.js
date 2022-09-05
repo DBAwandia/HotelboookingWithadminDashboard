@@ -3,6 +3,7 @@ import './NewHotel.css'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import useFetch from './useFetch'
 import {DriveFolderUploadOutlinedIcon} from '@mui/icons-material'
 
@@ -20,7 +21,7 @@ function NewHotel(){
     const [desc, setDesc] = useState('')
     const [title, setTitle] =useState('')
     // const details = {username, email, password, phonenumber}
-    const {data,loading,error} =useFetch("/api/room/room")
+    const {data,loading,error} =useFetch("/room/room")
     const handleSelect =(e)=>{
       const value = Array.from(
         e.target.selectedOptions,
@@ -55,7 +56,7 @@ function NewHotel(){
       // console.log(list,selected)
       const newhotel ={name,type,cheapestPrice,desc,title,city,rooms,photos: lists}
 
-      await axios.post("/api/hotel/hotels", newhotel)
+      await axiosInstance.post("/hotel/hotels", newhotel)
         setSuccess(true)
         
       }catch(err){

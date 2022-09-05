@@ -14,8 +14,14 @@ router.post("/:userId", async(req,res)=>{
     const amount = req.body.amount
     const daytwo = req.body.daytwo
     const name = req.body.name
+    const roomname = req.body.roomname
+    // const hotelname = req.body.hotelname
+    const phonenumbers = req.body.phonenumbers
 
-    const savedBooking = bookorders({ days: days, amount: amount,daytwo: daytwo,dayone: dayone,name: name})
+
+
+
+    const savedBooking = bookorders({ days: days, amount: amount,phonenumbers: phonenumbers,daytwo: daytwo,dayone: dayone,name: name, roomname: roomname})
     try{
         const savedBook = await savedBooking.save()
         try{
@@ -56,7 +62,7 @@ router.get("/order/:orderId", async(req,res)=>{
 })
 router.get("/orders", async(req,res)=>{
     try{
-        const getOrder = await bookorders.find()
+        const getOrder = await bookorders.find().sort({_id: -1})
         res.status(200).json(getOrder)
     }catch(err){
         res.status(500).json(err)

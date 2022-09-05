@@ -14,7 +14,11 @@
     flex: 7;
     padding: 25px;
 }
-        
+.Bookdate{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}     
 .dataGrid{
     width: 100%;
     height: 80vh;

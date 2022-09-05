@@ -7,15 +7,16 @@ import Charts from './Charts'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Tables from './Tables'
+import {axiosInstance} from "../Utils/Utils"
 function Analytics() {
   const [list, setList] = useState([])
-  const {data} = useFetch("/api/userr/countByEmails")
-  const obj= "api/Bookorders/getAmount"
-  const url = "/api/userr/stats"
+  const {data} = useFetch("/userr/countByEmails")
+  const obj= "/Bookorders/getAmount"
+  const url = "/userr/stats"
   useEffect(()=>{
     const fetchData = async(obj)=>{
       try{
-        const res = await axios.get(obj)
+        const res = await axiosInstance.get(obj)
         setList(res.data)
       }catch(err){}
     }
@@ -50,7 +51,7 @@ function Analytics() {
   useEffect(()=>{
     const getUserData = async()=>{
       try{
-        const res = await axios.get("/api/userr/monthstats")
+        const res = await axiosInstance.get("/userr/monthstats")
         setUserData(res.data)
         setCalc((res.data[0].total * 100)/res.data[1].total - 100)
       }catch(err){
@@ -66,7 +67,7 @@ function Analytics() {
   useEffect(()=>{
       const getIncome = async() =>{
         try{
-            const response = await axios.get("/api/Bookorders/stats")
+            const response = await axiosInstance.get("/Bookorders/stats")
             setIncome(response.data)
             setPerc((response.data[0].total*100)/response.data[1].total - 100)
         }catch(err){}

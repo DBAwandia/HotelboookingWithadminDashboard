@@ -3,6 +3,7 @@ import './NewContainer.css'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import {DriveFolderUploadOutlinedIcon} from '@mui/icons-material'
 
 
@@ -24,7 +25,7 @@ function NewContainer(){
         const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/wandia/image/upload", datas)
         const URL = uploadRes.data.url
         // const newUser = {details: details, img:URL} 
-        await axios.post("/api/userr/registers", {username: username, img: URL, password: password, phonenumber: phonenumber,email: email})
+        await axiosInstance.post("/userr/registers", {username: username, img: URL, password: password, phonenumber: phonenumber,email: email})
         setSuccess(true)
         // console.log(URL)
         

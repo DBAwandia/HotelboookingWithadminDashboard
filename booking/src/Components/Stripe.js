@@ -12,7 +12,10 @@ function Stripe() {
   const navigate = useNavigate()
   const {savedData,loading,error,dispatch} = useContext(DetailsContext)
     const location = useLocation()
+    console.log(location)
     const stripeID = location.state.hotelID
+    const roomState= location.state.roomName
+
   const handleSubmitDocuments = async(e) =>{
     e.preventDefault()
     
@@ -20,7 +23,7 @@ function Stripe() {
       try{
       const res = await axios.post("http://localhost:5000/Orders/stripecomplete",{name: name, areas: areas, province: province,town: town, number: number})
       dispatch({type:"LOADED_DETAILS", payload: res.data})
-      navigate("/completed",{state: {stripeID}})
+      navigate("/completed",{state: {stripeID,roomState}})
       }catch(err){
     dispatch({type:"ERROR_DETAILS", payload: err.res.message})
         
@@ -50,10 +53,10 @@ function Stripe() {
         </div>
         <div className='labelInput'>
           <label>State/Province</label>
-          <input required type='text'  onChange={(e)=>setProvince(e.target.value)}/>
+          <input required type='text' placeholder="Enter country"  onChange={(e)=>setProvince(e.target.value)}/>
         </div>
         <div className='buttonContainers'>
-        <button onClick={handleSubmitDocuments}>{loading?"Confirming...": "Confirm"}</button>
+        <button onClick={handleSubmitDocuments}>{loading?"loading...": "Confirm"}</button>
         {error && "user error"}
       </div>
       </div>

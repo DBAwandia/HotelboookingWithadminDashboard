@@ -2,6 +2,8 @@ import React, {useEffect,useState} from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
+
 // import './TaxiEditorFetch.css'
 function TaxiEditorFetch(){
     const [files, setFiles] = useState("")
@@ -21,7 +23,7 @@ function TaxiEditorFetch(){
                 return URL
 
             }))
-            await axios.post("/api/deliverys/savedatas",{ name: name,phonenumber: phonenumber,city: city, photos: list})
+            await axiosInstance.post("/deliverys/savedatas",{ name: name,phonenumber: phonenumber,city: city, photos: list})
             setSuccess(true)
         }catch(err){
             console.log(err)

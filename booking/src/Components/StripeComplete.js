@@ -17,6 +17,8 @@ function StripeComplete() {
 
   const location = useLocation()
   const identityID = location.state.stripeID
+  const roomID = location.state.roomState
+
   const [levels, setLevels] = useState([])
  const objectData =`http://localhost:5000/hotel/hotel/${identityID}`
  const fetchDatas = async(objectData)=>{
@@ -26,6 +28,8 @@ function StripeComplete() {
   }catch(error){console.log(error)}
  }
  fetchDatas(objectData)
+
+
  const level= [levels]
 //  const objectDatas = [objectData]
   const {savedData,loading,error,dispatch} = useContext(DetailsContext)
@@ -33,7 +37,9 @@ function StripeComplete() {
   const {data} = useFetch(`http://localhost:5000/Orders/getusers/${id}`)
   const datas = [data]
   const { options,date } = useContext(SearchContext)
-
+  // const hotelname = level?.map(item => item.name)
+  const roomname = roomID[0]
+  // console.log(roomname,hotelname)
 const MILLI_SEC_PER_DAY = 1000 * 60 * 60 * 24 ;
 function dayDifference( date1 , date2){
   const timeDiff = Math.abs( date2?.getTime() -   date1?.getTime())
@@ -44,7 +50,7 @@ const days = dayDifference(  date[0]?.endDate,   date[0]?.startDate)
 const navigate = useNavigate()
 const dayone = date[0]?.startDate
 const daytwo = date[0]?.endDate
-console.log(dayone,daytwo)
+// console.log(dayone,daytwo)
 // const amounts = (level.cheapestPrice*days*options.room)
 const[stripeToken, setStripeToken] = useState(null)
 const onToken = (token)=>{
@@ -65,7 +71,6 @@ const useremail = user.email
   // const getResponse = () =>{
     
   // }
- console.log(useremail, daytwo,dayone)
   const sendOtp = (e) =>{
     e.preventDefault()
     window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
@@ -88,7 +93,7 @@ const useremail = user.email
       setOpen(true)
 
     }).catch((error) => {
-     console.log(error)
+    //  console.log(error)
     });
   }
   const verifyOtp = (e) =>{
@@ -101,17 +106,17 @@ const useremail = user.email
       // }).catch((error) => {
       
       // });
-      console.log(final)
+      // console.log(final)
 
       final.confirm(verifyCode).then((result) => {
         // User signed in successfully.
-       console.log(result)
+      //  console.log(result)
        setOpens(true)
         // ...
       }).catch((error) => {
         // User couldn't sign in (bad verification code?)
         // ...
-        console.log(error)
+        // console.log(error)
        setOpenss(true)
 
       });
@@ -124,7 +129,7 @@ useEffect(()=>{
         tokenId: stripeToken.id,
         amount: amountss * 100
       })
-      await axios.post(`http://localhost:5000/Bookorders/${userid}`,{days: days, amount: amountss,name: useremail, dayone: dayone, daytwo: daytwo})
+      await axios.post(`http://localhost:5000/Bookorders/${userid}`,{days: days, dayone: dayone, phonenumbers: phonenumbers,roomname: roomname,name: useremail, daytwo: daytwo})
       navigate("/payments",{state:  amountss})
 
       }catch(err){console.log(err)}

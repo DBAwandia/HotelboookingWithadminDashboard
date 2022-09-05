@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import useFetch from './useFetch'
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 
 
 function NewRoomContainer(){
@@ -14,13 +15,13 @@ function NewRoomContainer(){
     const [success, setSuccess] = useState(false)
     const [hotelId, setHotelId] = useState(undefined)
     const [rooms, setRooms] = useState([])
-    const {data} = useFetch('/api/hotel/finds')
+    const {data} = useFetch('/hotel/finds')
     const handleClick =  async(e) =>{
       e.preventDefault()
       const roomNumbers = rooms.split(",").map(room=>({number: room}))
       console.log(roomNumbers,hotelId)
           try{
-            await axios.post(`/api/room/${hotelId}`, {roomNumbers})
+            await axiosInstance.post(`/room/${hotelId}`, {roomNumbers})
             setSuccess(true)
           }catch(err){
             console.log(err)

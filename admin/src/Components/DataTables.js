@@ -1,5 +1,6 @@
+import React  from 'react';
 import './Produce.css'
- 
+import Moment from 'react-moment';
  export  const userColumns= [
   {
     field: "_id",
@@ -172,5 +173,54 @@ export const deliveryColumns = [
     field: "phonenumber",
     headerName: "PHONENUMBER",
     width: 220
+  }
+]
+
+export const orderColumns = [
+  {
+    field: "name",
+    headerName: "Customer",
+    width: 190
+  },
+  {
+    field: "phonenumbers",
+    headerName: "Phonenumbers",
+    width: 160
+  }
+  ,
+  {
+    field: "roomname",
+    headerName: "BookedRoom",
+    width: 150
+  }
+  ,
+  {
+    field: "days",
+    headerName: "Validity",
+    width: 90
+  }
+  ,
+  {
+    field: "amount",
+    headerName: "Amount Paid", 
+    width: 190
+  }
+  ,
+  {
+    field: "Info",
+    headerName: "StartDate - EndDate",
+    width: 230,
+    renderCell: (params)=>{
+      return <div className="Bookdate">
+        <Moment format="DD/MM/YYYY">
+        {params.row.dayone}
+        </Moment>
+            -
+            <Moment format="DD/MM/YYYY">
+            {params.row.daytwo}
+            </Moment>
+      </div>
+    }
+
   }
 ]

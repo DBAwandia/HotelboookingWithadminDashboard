@@ -41,7 +41,7 @@ function OrderHistory({setSidebar,ref}) {
     useEffect(()=>{
         const endOffset = offSet + itemPerPage
         setCurrrentItems(data.slice(offSet, endOffset))
-        setPageCount(data.length/itemPerPage)
+        setPageCount(Math.ceil(data.length/itemPerPage))
     },[offSet, data,itemPerPage])
 
     const handlePageClick = (event) =>{
@@ -71,10 +71,10 @@ function OrderHistory({setSidebar,ref}) {
                             <p>Orderid:</p><b>{item._id}</b>
                         </div>
                         <div className='objalign'>
-                            <p>Days:</p><b>{item.days}</b>
+                            <p>Validity:</p><b>{item.days}</b>
                         </div>
                         <div className='objalign'>
-                            <b>Paid:</b><p> ${item.amount}</p>
+                            <b>Amount paid:</b><p> ${item.amount}</p>
                         </div>
                         <div className='objalign'>
                         <b>Date:</b><p style={{color:"white", fontSize: 22,marginLeft: 15,letterSpacing: 2}}>

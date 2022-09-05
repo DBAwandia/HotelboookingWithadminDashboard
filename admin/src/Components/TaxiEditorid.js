@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import axios from 'axios'
 import {useLocation} from 'react-router-dom'
 import './TaxiEditorFetch.css'
+import {axiosInstance} from "../Utils/Utils"
 
 function TaxiEditorid(){
     const [files, setFiles] = useState("")
@@ -27,7 +28,7 @@ function TaxiEditorid(){
                 return URL
 
             }))
-            await axios.put(`/api/deliverys/finds/${ids}`,{ name: name,phonenumber: phonenumber,city: city, photos: list})
+            await axiosInstance.put(`/deliverys/finds/${ids}`,{ name: name,phonenumber: phonenumber,city: city, photos: list})
             setSuccess(true)
         }catch(err){
             console.log(err)

@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import './Users.css'
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import {useLocation} from 'react-router-dom'
 import {userColumns,userRows} from './DataTables'
 // import useFetch from './useFetch'
@@ -21,10 +22,10 @@ function Users() {
   
   
   //useFetch
-  const obj =`/api/userr/${path}`
+  const obj =`/userr/${path}`
   const fetchData = async(obj) =>{
     try{
-      const res = await axios.get(obj)
+      const res = await axiosInstance.get(obj)
       setList(res.data)
     }catch(err){}
 
@@ -39,12 +40,12 @@ function Users() {
   const handleDelete = async(uid)=>{
     // const id = list?.map(items=>items._id)
     try{
-      await axios.delete(`/userr/${path}/${uid}`)
+      await axiosInstance.delete(`/userr/${path}/${uid}`)
       setLists(lists.filter((item=> item._id !== uid)))
 
     }catch(err){}
   }
-  console.log(lists)
+
   const actionColumn = [
     {
       field: "action",

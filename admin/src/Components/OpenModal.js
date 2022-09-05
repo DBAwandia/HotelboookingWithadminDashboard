@@ -1,10 +1,12 @@
 import React from 'react'
 import './OpenModal.css'
 import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
+
 function OpenModal({id,data, setOpen}) {
     const handleDelete = async(id)=>{
             try{
-                await axios.delete(`/api/deliverys/${id}`)
+                await axiosInstance.delete(`/deliverys/${id}`)
                 data.filter(item => item._id !== id)
                 setOpen(false)
             }catch(err){

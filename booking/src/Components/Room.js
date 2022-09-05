@@ -8,6 +8,7 @@ import { SearchContext } from '../Context/SearchContext'
 function Room({setOpenApp,days,hotelID,options}) {
     const [selectedRooms, setSelectedRooms] = useState([])
     const {data, loading, error } = useFetch(`http://localhost:5000/hotel/room/${hotelID}`)
+    // console.log(data)
     const {date} = useContext(SearchContext)
     const handleSelect = (e) =>{
         const checked = e.target.checked
@@ -35,7 +36,8 @@ function Room({setOpenApp,days,hotelID,options}) {
         return !isFound
     }
     const navigate = useNavigate()
-
+    const roomName = data.map(item => item.title)
+    console.log(roomName)
     const handleClick = async () =>{
         try{
             await Promise.all(
@@ -45,7 +47,7 @@ function Room({setOpenApp,days,hotelID,options}) {
                 })
             )
             //navigate to payment
-            navigate("/stripe",{state: {hotelID}})
+            navigate("/stripe",{state: {hotelID, roomName}})
         }catch(err){}
     }
   return (

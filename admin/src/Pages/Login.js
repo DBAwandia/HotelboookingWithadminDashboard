@@ -1,8 +1,9 @@
-import axios from 'axios'
 import React, {useContext, useEffect, useState} from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../Context/LoginContext'
 import "./Login.css"
+import {axiosInstance} from "../Utils/Utils"
+
 function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] =useState("")
@@ -13,7 +14,7 @@ function Login() {
    
         dispatch({type: "LOGIN_START"})
         try{
-            const res=  await axios.post("/api/userr/login", {email: email, password: password})
+            const res=  await axiosInstance.post("/userr/login", {email: email, password: password})
               if(res.data.isAdmin){
               dispatch({type: "LOGIN_SUCCESS",payload: res.data.details})
               navigate("/")

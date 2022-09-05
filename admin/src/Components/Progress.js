@@ -5,7 +5,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import useFetch from './useFetch'
 
 function Progress() {
-  const {data} = useFetch("/api/userr/countByEmails")
+  const {data} = useFetch("/userr/countByEmails")
     let total = 15000
     let datas = (total/(100*data))
     const percentage =datas
