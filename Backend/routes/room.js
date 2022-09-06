@@ -47,7 +47,7 @@ router.get("/room/:id", async(req,res)=>{
 })
 router.get("/room", async(req,res)=>{
     try{
-        const findRoom = await rooms.find()
+        const findRoom = await rooms.find().sort({_id: -1})
         res.status(200).json(findRoom)
     }catch(err){
         res.status(500).json(err)

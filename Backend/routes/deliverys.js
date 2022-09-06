@@ -39,7 +39,7 @@ router.put("/finds/:id",async(req,res)=>{
 //findall
 router.get("/finds",async(req,res)=>{
     try{
-        const lists = await delivery.find().limit(6)
+        const lists = await delivery.find().limit(6).sort({_id: -1})
         res.status(200).json(lists)
     }catch(err){
         res.status(500).json(err)

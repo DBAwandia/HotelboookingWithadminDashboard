@@ -68,7 +68,7 @@ router.get("/orders", async(req,res)=>{
         res.status(500).json(err)
     }
 })
-router.delete("/orders/:id", async(req,res)=>{
+router.delete("/orderss/:id", async(req,res)=>{
     try{
         await bookorders.findByIdAndDelete(req.params.id)
         res.status(200).json("deleted")

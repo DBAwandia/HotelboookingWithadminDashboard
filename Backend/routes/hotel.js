@@ -52,7 +52,7 @@ router.get("/all", async(req,res)=>{
 })
 router.get("/finds", async(req,res)=>{
     try{
-        const hotells = await hotels.find().limit(6)
+        const hotells = await hotels.find().limit(6).sort({_id: -1})
         res.status(201).json(hotells)
     }catch(err){
         res.status(400).json("err" + err)

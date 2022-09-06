@@ -31,9 +31,11 @@ function Tables() {
       renderCell: (params) =>{
        
         const handleClick = async(id) =>{
+          const uuid = id || params.row._id
           try{
-            await axiosInstance.delete(`/Bookorders/orders/${id}`)
-            setList(list.filter(item => item._id !== id))
+            await axiosInstance.delete(`/Bookorders/orderss/${uuid}`)
+            setList(list.filter(item => item._id !== uuid))
+            
           }catch(err){
             console.log(err)
           }
@@ -51,6 +53,7 @@ function Tables() {
   return (
       <div className='dataGrid'>
           <DataGrid
+              style={{ height: "50%"}}
               rows={list}
               columns={orderColumns.concat(actionColumn)}
               pageSize ={5}

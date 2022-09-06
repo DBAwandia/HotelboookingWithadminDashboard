@@ -75,6 +75,8 @@ function Analytics() {
       getIncome()
   },[])
   const persent = perc.toFixed(2)
+  const persents = calc.toFixed(2)
+
   return (
     <div className='analytics'>
       <div className='analyticContainer'>
@@ -83,10 +85,9 @@ function Analytics() {
             <h1 className='analyticChartss'>Users</h1>
             <div className='analyticRating'>
               <span>All users: {data}</span>
-              <p>{calc}%</p>
+              <p>{persents}%</p>
               <p>This month users: {userData[1]?.total}</p>
-             {calc < 0 ? <ArrowUpward sx={{ fontSize: 25, color: "green"}} /> :  <ArrowUpward  sx={{ fontSize: 25, color: "green"}}/> }
-
+             {persents < 0 ? <ArrowUpward sx={{ fontSize: 25, color: "green"}} /> :  <ArrowUpward  sx={{ fontSize: 25, color: "green"}}/> }
             </div>
             <Link to="/users">
             <p className='analyicDesc'>

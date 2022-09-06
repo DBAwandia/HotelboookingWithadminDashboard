@@ -40,6 +40,10 @@ app.use("/api/userr", userRouter)
 const deliveryRouter = require("./routes/deliverys")
 app.use("/api/deliverys", deliveryRouter)
 
-app.listen(process.env.PORT || PORT, ()=>console.log("server running"))
+app.get("/", (req,res)=>{
+    res.send("App is running and live")
+})
+
+app.listen(process.env.PORT || 5000, ()=>console.log("server running"))
 
 
