@@ -2,7 +2,7 @@ import { Cancel } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
 import './Roo.css'
 import useFetch from '../Hooks/useFetch'
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import {useNavigate} from 'react-router-dom'
 import { SearchContext } from '../Context/SearchContext'
 function Room({setOpenApp,days,hotelID,options}) {
@@ -42,7 +42,7 @@ function Room({setOpenApp,days,hotelID,options}) {
         try{
             await Promise.all(
                 selectedRooms.map((roomID) =>{
-                    const res = axios.put(`http://localhost:5000/room/availability/${roomID}`,{date: alldates})
+                    const res = axiosInstance.put(`/room/availability/${roomID}`,{date: alldates})
                     return res.data
                 })
             )

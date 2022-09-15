@@ -31,7 +31,7 @@ function OrderHistory({setSidebar,ref}) {
     const { user} = useContext(LoginContext)
     const id = user._id
     // console.log(id,user)
-    const {data} = useFetch(`http://localhost:5000/userr/orderlist/${id}`)
+    const {data} = useFetch(`/userr/orderlist/${id}`)
     // console.log(data)
     const [currentItems, setCurrrentItems] = useState(null)
     const [pageCount, setPageCount] = useState(0)

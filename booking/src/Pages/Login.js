@@ -1,7 +1,7 @@
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import React, {useContext, useEffect, useState} from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { LoginContext } from '../Context/LoginContext'
+import { LoginContext } from "../Context/LoginContext"
 import "./Login.css"
 function Login() {
   const [email, setEmail] = useState("")
@@ -14,12 +14,13 @@ function Login() {
    
         dispatch({type: "LOGIN_START"})
         try{
-            const res=  await axios.post("http://localhost:5000/userr/login", {email: email, password: password})
+            const res=  await axiosInstance.post("/userr/login", {email: email, password: password})
               dispatch({type: "LOGIN_SUCCESS",payload: res.data.details})
               setSuccess(true)
               navigate("/")
         }catch(err){
           dispatch({type:"LOGIN_FAIL", payload: err.response.message})
+
         }
   }
   return (

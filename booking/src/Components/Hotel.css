@@ -135,8 +135,24 @@ button{
 
 
 }
-/* .manageSearch{
-    position: absolute;
-    top: -100px;;
-    right: 0;
-} */
+.manageSearchs{
+    animation-name: manager;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+@keyframes manager {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+}

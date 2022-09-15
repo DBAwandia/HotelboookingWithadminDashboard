@@ -8,7 +8,7 @@ const photos = {
 
 function MappingObj(){
 const proPhotos = Object.entries(photos)
-console.log(proPhotos)
+
 
     return(
                 <div>

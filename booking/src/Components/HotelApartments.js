@@ -31,7 +31,7 @@ function HotelApartments() {
     const handleShow =()=>{
         setShow(!show)
     }
-    const {data,loading} = useFetch("http://localhost:5000/hotel/countByName")
+    const {data,loading} = useFetch("/hotel/countByName")
 
   return (
     <Swiper

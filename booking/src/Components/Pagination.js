@@ -8,7 +8,7 @@ function Pagination(){
    const [pageCount, setPageCount] = useState(0)
    const [itemsOffset, setItemsOffset ] = useState(0)
    const itemsPerPage = 2
-   const {data} = useFetch("http://localhost:5000/Bookorders/orders")
+   const {data} = useFetch("/Bookorders/orders")
    useEffect(()=>{
         const endOffset = itemsOffset + itemsPerPage
         setCurrentItems(data.slice(itemsOffset, endOffset))

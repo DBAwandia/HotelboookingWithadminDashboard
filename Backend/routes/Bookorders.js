@@ -2,9 +2,9 @@ const express = require("express")
 const router = express.Router()
 const users = require("../models/User")
 const bookorders = require("../models/BookOrder")
-const authToken = process.env.AUTH_TOKEN;
-const accountSid = process.env.ACCOUNT_SID;
-const client = require("twilio")(accountSid, authToken)
+// const authToken = process.env.AUTH_TOKEN;
+// const accountSid = process.env.ACCOUNT_SID;
+// const client = require("twilio")(accountSid, authToken)
 
 
 router.post("/:userId", async(req,res)=>{
@@ -24,11 +24,14 @@ router.post("/:userId", async(req,res)=>{
     const savedBooking = bookorders({ days: days, amount: amount,phonenumbers: phonenumbers,daytwo: daytwo,dayone: dayone,name: name, roomname: roomname})
     try{
         const savedBook = await savedBooking.save()
+        
         try{
             await users.findByIdAndUpdate(userid,{$push :{orders: savedBook._id}})
+
         }catch(err){
             res.status(500).json(err)
         }
+
         res.status(200).json(savedBook)
     }catch(err){
         res.status(500).json(err)
@@ -128,55 +131,55 @@ router.get("/stats", async(req,res)=>{
     }
 })
 //login phonenumber channel(sms/call)
-router.get("/logincode", (req,res)=>{
-    const {phonenumber, channels} =req.query
+// router.get("/logincode", (req,res)=>{
+//     const {phonenumber, channels} =req.query
 
-    try{
+//     try{
 
-            client.verify.v2.services(process.env.SERVICE_ID).verifications.create(
-                {
-                    to: phonenumber,
-                    channel: channels
-                }
-            ).then((data=>{
-            if(data.status === "pending"){
-                res.status(200).json({message: "verification sent", data})
-            }else{
-                res.status(400).json({message: "wrong number"})
-            }
-            }))
+//             client.verify.v2.services(process.env.SERVICE_ID).verifications.create(
+//                 {
+//                     to: phonenumber,
+//                     channel: channels
+//                 }
+//             ).then((data=>{
+//             if(data.status === "pending"){
+//                 res.status(200).json({message: "verification sent", data})
+//             }else{
+//                 res.status(400).json({message: "wrong number"})
+//             }
+//             }))
         
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
-//verify login phonenumber code
-router.post("/logincodeverify", (req,res)=>{
-    // const phonenumber =req.query.phonenumber
-    // const codes =req.query.codes
-    const {phonenumber, codes} =req.query
+//     }catch(err){
+//         res.status(500).json(err)
+//     }
+// })
+// //verify login phonenumber code
+// router.post("/logincodeverify", (req,res)=>{
+//     // const phonenumber =req.query.phonenumber
+//     // const codes =req.query.codes
+//     const {phonenumber, codes} =req.query
 
-    try{
+//     try{
       
-          client.verify.v2.services(process.env.SERVICE_ID).verificationChecks.create(
-                {
-                    to: `+${phonenumber}`,
-                    code: codes
-                }
-            ).then((data)=>{
-                if(data.valid === "true"){
-                    res.status(200).json({message:"success", data} )
-                }
-                else{
-                    res.status(400).json({message:"wrong details", data})
-                }
+//           client.verify.v2.services(process.env.SERVICE_ID).verificationChecks.create(
+//                 {
+//                     to: `+${phonenumber}`,
+//                     code: codes
+//                 }
+//             ).then((data)=>{
+//                 if(data.valid === "true"){
+//                     res.status(200).json({message:"success", data} )
+//                 }
+//                 else{
+//                     res.status(400).json({message:"wrong details", data})
+//                 }
                 
-            })
+//             })
            
         
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
+//     }catch(err){
+//         res.status(500).json(err)
+//     }
+// })
 
 module.exports = router

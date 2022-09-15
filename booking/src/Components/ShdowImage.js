@@ -23,7 +23,7 @@ import useFetch from '../Hooks/useFetch'
 
 function ShdowImage({setOpenImage,item}) {
   const id = item
-  const {data}=useFetch(`http://localhost:5000/hotel/hotel/${id}`)
+  const {data}=useFetch(`/hotel/hotel/${id}`)
 
   const datas= [data]
 

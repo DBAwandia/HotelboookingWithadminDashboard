@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import StripeCheckout from 'react-stripe-checkout';
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 function Stripes(){
 const [stripeToken, setStripeToken] = useState(null)
 const[ lebel,setLebel] = useState([])
@@ -10,7 +10,7 @@ const onToken = (token) =>{
 useEffect(()=>{
     const makeRequest = async()=>{
         try{
-            const res = await axios.post("http://localhost:5000/stripe/payments",{
+            const res = await axiosInstance.post("/stripe/payments",{
                 tokenID: stripeToken.id,
                 amount: 1000
             })

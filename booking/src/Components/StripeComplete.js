@@ -8,7 +8,7 @@ import {RecaptchaVerifier,   signInWithPhoneNumber } from "firebase/auth";
 import './StripeComplete.css'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import useFetch from '../Hooks/useFetch'
 import { SearchContext } from '../Context/SearchContext'
 // import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
@@ -20,10 +20,10 @@ function StripeComplete() {
   const roomID = location.state.roomState
 
   const [levels, setLevels] = useState([])
- const objectData =`http://localhost:5000/hotel/hotel/${identityID}`
+ const objectData =`/hotel/hotel/${identityID}`
  const fetchDatas = async(objectData)=>{
   try{
-    const res = await axios.get(objectData)
+    const res = await axiosInstance.get(objectData)
     setLevels(res.data)
   }catch(error){console.log(error)}
  }
@@ -34,7 +34,7 @@ function StripeComplete() {
 //  const objectDatas = [objectData]
   const {savedData,loading,error,dispatch} = useContext(DetailsContext)
   const id = savedData.details._id
-  const {data} = useFetch(`http://localhost:5000/Orders/getusers/${id}`)
+  const {data} = useFetch(`/Orders/getusers/${id}`)
   const datas = [data]
   const { options,date } = useContext(SearchContext)
   // const hotelname = level?.map(item => item.name)
@@ -125,11 +125,11 @@ const useremail = user.email
 useEffect(()=>{
   const makeRequest = async()=>{
   try{
-      const res = await axios.post("http://localhost:5000/userr/checkout",{
+      const res = await axiosInstance.post("http://localhost:5000/userr/checkout",{
         tokenId: stripeToken.id,
         amount: amountss * 100
       })
-      await axios.post(`http://localhost:5000/Bookorders/${userid}`,{days: days, dayone: dayone, phonenumbers: phonenumbers,roomname: roomname,name: useremail, daytwo: daytwo})
+      await axiosInstance.post(`http://localhost:5000/Bookorders/${userid}`,{days: days, dayone: dayone, phonenumbers: phonenumbers,roomname: roomname,name: useremail, daytwo: daytwo})
       navigate("/payments",{state:  amountss})
 
       }catch(err){console.log(err)}

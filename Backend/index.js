@@ -12,9 +12,10 @@ app.use(cookieParser())
 app.use(cors())
 app.use(express.json())
 
-const PORT = process.env.PORT || 5000
+// const PORT = process.env.PORT || 5000
 
 mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true})
+
 const db = mongoose.connection
 db.on("err", ()=>console.log("err"))
 db.once("open", ()=>console.log("connected to mongoose"))
@@ -40,7 +41,7 @@ app.use("/api/userr", userRouter)
 const deliveryRouter = require("./routes/deliverys")
 app.use("/api/deliverys", deliveryRouter)
 
-app.get("/", (req,res)=>{
+app.get("/api", (req,res)=>{
     res.send("App is running and live")
 })
 

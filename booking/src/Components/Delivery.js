@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Navbar from './Navbar'
 import './Delivery.css'
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import { useNavigate,Link } from 'react-router-dom'
 import {Telegram, WhatsApp} from '@mui/icons-material'
 // const data = [
@@ -59,10 +59,10 @@ function Delivery(){
     //         setTimer(false)
     //     }
     // },[])
-    const URL = "http://localhost:5000/deliverys/finds"
+    const URL = "/deliverys/finds"
     const fetchData = async(URL) =>{
         try{
-            const res = await axios.get(URL)
+            const res = await axiosInstance.get(URL)
             setData(res.data)
         }catch(err){
             console.log(err)

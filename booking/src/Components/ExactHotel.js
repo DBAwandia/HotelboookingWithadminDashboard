@@ -49,7 +49,7 @@ const navigate = useNavigate()
 
 const[openImage, setOpenImage ] = useState(false)
 const id = location.pathname.split("/")[1]
-const {data}=useFetch(`http://localhost:5000/hotel/hotel/${id}`)
+const {data}=useFetch(`/hotel/hotel/${id}`)
 
 const datas = [data]
 const handleReserve =() =>{

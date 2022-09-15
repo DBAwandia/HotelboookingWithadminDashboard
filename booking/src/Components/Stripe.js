@@ -2,7 +2,8 @@ import React,{useState,useEffect,useContext} from 'react'
 import './Stripe.css'
 import {useNavigate,useLocation} from 'react-router-dom'
 import { DetailsContext } from '../Context/DetailsContext';
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
+
 function Stripe() {
   const [name,setName] = useState("")
   const [number,setNumber] = useState("")
@@ -21,7 +22,7 @@ function Stripe() {
     
     dispatch({type:"LOADING_DETAILS"})
       try{
-      const res = await axios.post("http://localhost:5000/Orders/stripecomplete",{name: name, areas: areas, province: province,town: town, number: number})
+      const res = await axiosInstance.post("/Orders/stripecomplete",{name: name, areas: areas, province: province,town: town, number: number})
       dispatch({type:"LOADED_DETAILS", payload: res.data})
       navigate("/completed",{state: {stripeID,roomState}})
       }catch(err){

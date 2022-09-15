@@ -1,5 +1,6 @@
-import axios from 'axios'
+
 import React, {useState, useEffect} from 'react'
+import {axiosInstance} from "../Utils/Utils"
 
 const useFetch =(url) =>{
     const [loading, setLoading] = useState(false)
@@ -9,7 +10,7 @@ const useFetch =(url) =>{
         const fetchData = async () =>{
             setLoading(true)
             try{
-                const res = await axios.get(url);
+                const res = await axiosInstance.get(url);
                 setData(res.data)
             }catch(err){
                 setError(err)
@@ -22,7 +23,7 @@ const useFetch =(url) =>{
     const reFetch = async () =>{
         setLoading(true)
         try{
-            const res = await axios.get(url)
+            const res = await axiosInstance.get(url)
             setData(res.data)
         }catch(err){
             setError(err)

@@ -47,7 +47,7 @@ function RatingPhoto() {
     const [open,setOpen] = useState(false)
     const form = useRef();
     const navigate = useNavigate()
-    const { data, loading} = useFetch("http://localhost:5000/hotel/finds")
+    const { data, loading} = useFetch("/hotel/finds")
     const sendEmail = (e)=>{
         e.preventDefault()
         emailjs.sendForm('fluid_brakes', 'template_wl4hdrp', form.current, 'Ru9-B2y3vQ64gc1wa')

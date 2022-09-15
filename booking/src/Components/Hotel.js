@@ -19,7 +19,7 @@ function Hotel() {
     const [date, setDate] = useState(location.state.date)
     const [ destination, setDestination] = useState(location.state.destination)
     const [options,setOptions] = useState(location.state.options)
-    const { data, loading ,error,reFetch} = useFetch(`http://localhost:5000/hotel/finds?city=${destination}`)
+    const { data, loading ,error,reFetch} = useFetch(`/hotel/finds?city=${destination}`)
     const handleClick = ()=>{
         reFetch()
     }
@@ -43,7 +43,7 @@ function Hotel() {
                     </div>}
                    </div>
                      <div clasName='manageSearch'>
-                        <ManageSearch onClick={()=>setSidebar(true)} sx={{position: "absolute",top:59,color: 'white', right: 85,cursor:"pointer", fontSize: 55}}/>
+                        <ManageSearch clasName='manageSearchs' onClick={()=>setSidebar(true)} sx={{position: "absolute",top:59,color: 'white', right: 85,cursor:"pointer", fontSize: 55}}/>
                     </div>
                   
         <div className='hotelContainer'>

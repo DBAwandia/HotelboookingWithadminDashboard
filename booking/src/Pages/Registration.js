@@ -1,4 +1,4 @@
-import axios from 'axios'
+import {axiosInstance} from "../Utils/Utils"
 import React, {useContext, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { RegisterContext } from '../Context/RegisterContext'
@@ -16,13 +16,14 @@ function Registration() {
     e.preventDefault()
     dispatch({type: "REGISTER_START"})
     try{
-      const res = await axios.post("http://localhost:5000/userr/registers", {username: username,email: email, password: password})
+      const res = await axiosInstance.post("/userr/registers", {username: username,email: email, password: password})
       dispatch({type: "REGISTER_SUCCESS", payload: res.data.details})
-      toast.success("SUCCESSFULLY CREATED")
+      // toast.success("SUCCESSFULLY CREATED")
       navigate("/login")
     }catch(err){
       dispatch({type: "REGISTER_FAIL", payload: err.res.details})
-      toast.error("Check details")
+
+      // toast.error("Check details")
     }
   }
  
@@ -36,11 +37,11 @@ function Registration() {
       <input type='password' required  placeholder='Enter password' onChange={(e)=>setPassword(e.target.value)} />
       <button onClick={handleRegister}>{loading ? "Registering.." :" Register"}</button>
       <div>
-        <ToastContainer 
+        {/* <ToastContainer 
         position="top-right"
         autoClose={5000}
         draggablePercent={60}
-        />
+        /> */}
         <p>Dont have an account?</p>
         <Link to="/login">Login</Link>
       </div>
